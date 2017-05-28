@@ -1,0 +1,46 @@
+.center {text-align: center;}
+.blurbody{background-color: #f7f7f7;}
+.whiteback{background-color: #fff;}
+
+/* index.html */
+
+.thumb {margin-top: 100px;background-image: url('../images/sharemarket2.jpg'); padding-top: 2%; max-width:100%; height: 100%;}
+
+.thumb>div{margin-left: 6%; height: 200px; border: 5px solid #0c2b4a; background-color: #0c2b4a; color:#fff;}
+.thumb h1{color:#ffb600;}
+
+.registerlink{margin-top: 15%; background-color: #0c2b4a; color: #fff; width: 200px; text-align: center; height: 50px; padding: 10px;}
+.registerlink>a{color:#fff;}
+.registerlink:hover{background-color: #fff; color: #0c2b4a; border: 4px solid #ffb600;}
+.registerlink>a:hover{text-decoration: none;color:#ffb600;}
+
+.footer{background-color: #1a1a1a; margin-top: 10%; color:#fff;}
+.footer th{color: #fff;border-bottom: 5px solid #ffb600;}
+.footer td{padding-left: 10px;}
+
+.newsletter input{width:20em;height: 30px;}
+.newsletterlink{background-color: #1a1a1a; color: #1a1a1a; text-align: center; height: 40px; padding: 8px; border: 5px solid #ffb600;}
+.newsletterlink>a{color:#fff;}
+.newsletterlink:hover{color: #0c2b4a; border: 4px solid #ffb600; background-color: #ffb600;}
+.newsletterlink>a:hover{text-decoration: none;color:#1a1a1a;}
+
+.footer2{text-align: center; background: #1a1a1a;}
+.footer2 a{color:#fff; padding: 10px; }
+.footer2 a:hover{color:#ffb600;}
+
+
+/* customer_login.html*/
+
+.customerlogin{background-color: #fff; margin-top: 50px; padding: 20px;}
+.customerlogin button{width: 200px;margin-top: 10px;}
+.customerlogin input{margin-top: 10px;}
+
+/* customer_signup.html*/
+
+.customersignup{background-color: #fff;margin-top: 10px;}
+
+.signup-button{margin-top:100px;}
+
+/* company dashboard*/
+
+

@@ -1,0 +1,201 @@
+create table customermaster
+(
+	memid number primary key not null,
+	name varchar(50) not null,
+	gender varchar(10) not null,
+	dob varchar(10) not null,
+	occupation varchar(20) not null,
+	income varchar(10) not null,
+	email varchar(50) unique not null,
+	mobile varchar(10) not null,
+	city varchar(20) not null,
+	state varchar(20) not null,
+	country varchar(20) not null,
+	pincode varchar(10) not null,
+	pwd varchar(100) not null
+)
+/
+Create sequence next_cust_memid 
+start with 1
+increment by 1
+minvalue 1
+maxvalue 10000;
+/
+create table companymaster
+(
+
+	memid number primary key not null,
+	cname varchar2(50) not null,
+	csymbol varchar2(10) unique not null,
+	doe varchar2(20) not null,
+	ctype varchar2(20) not null,
+	email varchar2(50) unique not null,
+	mobile varchar2(10) not null,
+	cabout varchar2(200) not null,
+	address varchar2(100) not null,
+	city varchar2(20) not null,
+	state varchar2(20) not null,
+	country varchar2(20) not null,
+	pincode varchar2(10) not null,
+	pwd varchar2(100) not null	
+)
+/
+Create sequence next_comp_memid 
+start with 1
+increment by 1
+minvalue 1
+maxvalue 10000;
+/
+create table addrevenue
+(
+	sno number primary key not null,
+	email varchar2(50) not null,
+	revenuedetails varchar2(10) not null,
+	FOREIGN KEY(email) REFERENCES companymaster(email)
+)
+/
+Create sequence next_revenue_sno 
+start with 1
+increment by 1
+minvalue 1
+maxvalue 10000;
+/
+create table addfutureplans
+(
+	sno number primary key not null,
+	email varchar2(50) not null,
+	futureplansdetails varchar2(100) not null,
+	FOREIGN KEY(email) REFERENCES companymaster(email)
+)
+/
+Create sequence next_fplans_sno
+start with 1
+increment by 1
+minvalue 1
+maxvalue 10000;
+/
+create table companyfeedback
+(
+	sno number primary key not null,
+	semail varchar2(50) not null,
+	remail varchar2(50) not null,
+	msg varchar2(200) not null
+)
+/
+Create sequence next_compfeed_sno
+start with 1
+increment by 1
+minvalue 1
+maxvalue 10000;
+/
+create table customerfeedback
+(
+	sno number primary key not null,
+	semail varchar2(50) not null,
+	remail varchar2(50) not null,
+	msg varchar2(200) not null
+)
+/
+Create sequence next_custfeed_sno
+start with 1
+increment by 1
+minvalue 1
+maxvalue 10000;
+/
+create table companysharemaster
+(
+	sno number primary key not null,
+	csymbol varchar2(10) not null,
+	email varchar2(50) not null,
+	share_rate varchar2(10) not null,
+	no_of_shares varchar2(10) not null
+)
+/
+Create sequence next_companysharemaster_sno
+start with 1
+increment by 1
+minvalue 1
+maxvalue 10000;
+/
+create table livemarket
+(
+	transid number primary key not null,
+	custemail varchar2(50) not null,
+	csymbol varchar2(10) not null,
+	srate varchar2(10) not null,
+	noofshares varchar2(10) not null,
+	tvalue varchar2(20) not null,
+	tdate varchar2(20) not null,
+	status varchar2(20) not null
+)
+/
+Create sequence next_transid
+start with 1000
+increment by 1
+minvalue 1
+maxvalue 1000000;
+/
+create table pendingshares
+(
+	sno number primary key not null,
+	custemail varchar2(50) not null,
+	csymbol varchar2(10) not null,
+	lrate varchar2(10) not null,
+	rrate varchar2(10) not null,
+	noofshares varchar2(10) not null,
+	tvalue varchar2(20) not null,
+	tdate varchar2(20) not null,
+	status varchar2(20) not null
+)
+/
+Create sequence next_pending_sno
+start with 1
+increment by 1
+minvalue 1
+maxvalue 1000000;
+/
+create table customerwallet
+(
+	transid number primary key not null,
+	email varchar2(50) not null,
+	amt varchar2(20) not null,
+	transtype varchar2(10) not null,
+	tdate varchar2(30) not null
+)
+/
+Create sequence next_custwallet_transid
+start with 1000
+increment by 1
+minvalue 1
+maxvalue 1000000;
+/
+create table companywallet
+(
+	transid number primary key not null,
+	email varchar2(50) not null,
+	amt varchar2(20) not null,
+	transtype varchar2(10) not null,
+	tdate varchar2(30) not null
+)
+/
+Create sequence next_compwallet_transid
+start with 1000
+increment by 1
+minvalue 1
+maxvalue 1000000;
+/
+create table shareratedetails
+(
+	sno number primary key not null,
+	csymbol varchar2(50) not null,
+	srate varchar2(20) not null,
+	perchange varchar2(20) not null,
+	tdate varchar2(30) not null
+)
+/
+Create sequence next_sharerate_sno
+start with 1
+increment by 1
+minvalue 1
+maxvalue 1000000;
+/
